@@ -41,7 +41,7 @@ def vectorize_chunks(chunks):
         "embedding": vectors
     })
 
-    df.to_parquet("db.parquet", index=False)
+    df.to_parquet("data/db.parquet", index=False)
 
     print("Database created")
 
@@ -50,4 +50,5 @@ def create_db():
     chunks = split_chunks(documents)
     vectorize_chunks(chunks)
 
-create_db()
+if __name__ == "__main__":
+    create_db()
